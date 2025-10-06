@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Lobby</title>
+    <link rel="stylesheet" href="../css/lobby_player.css">
+    <script src="../socket.io/socket.io.js"></script>
+    <script src="../js/lobby.io.js"></script>
+    <script src="../js/lobby_player.js"></script>
+</head>
+
+<body>
+    <div id='topbar'>
+        <button id='ready' style="display: none">Join</button>
+        <button id='create_lobby' style="display: none">Create Lobby</button>
+        <input type='text' id='lobby_code' placeholder='Lobby Code' />
+        <button id='join_lobby'>Join Lobby</button>
+        <button id='get_people' style="display: none">Get People</button>
+        <span id='lobby-code-note' class='text'> Your Lobby Code: <span id='lobby-code-view'>N/A</span></span>
+        <button class='right' id='leave_lobby'>Leave Lobby</button>
+        <button onclick="window.open('https://moveit.atlasproject.de/anleitung', '_blank')">Anleitung</button>
+    </div>
+    <div id='container'>
+        <div id='chat'>
+            <div id='msgs-con'></div>
+            <div id='send-msg'>
+                <input class='inp-text' type='text' id='msg-body' style='width:186px;margin:0px -5px 0px 0px;'>
+                <input type='button' value='>' id='send' class='button' style='width:40px;margin:0px -5px 0px 0px;'>
+            </div>
+        </div>
+        <div id='people'></div>
+    </div>
+</body>
+
+</html>
