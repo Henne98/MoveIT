@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplayer Lobby</title>
+  <script src="../js/lobby_player.js"></script>     <!-- Logic der Host Lobby-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    #popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    #lobby {
+      display: none;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="popup">
+  <div id="popup-content">
+    <h2>Lobby beitreten</h2>
+    <input type="text" id="lobbyCodeInput" placeholder="Lobbycode eingeben"><br><br>
+    <button onclick="joinLobby()">Lobby beitreten</button>
+    <button onclick="goToMainMenu()">Zurück zum Hauptmenü</button>
+  </div>
+</div>
+
+<div id="lobby">
+  <h2>Multiplayer Lobby</h2>
+  <p>Dein Lobbycode: <span id="lobbyCodeDisplay">N/A</span></p>
+  <button onclick="leaveLobby()">Lobby verlassen</button>
+</div>
+
+<script>
+  function joinLobby() {
+    const code = document.getElementById('lobbyCodeInput').value;
+    if (code.trim() !== "") {
+      document.getElementById('lobbyCodeDisplay').textContent = code;
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('lobby').style.display = 'block';
+    } else {
+      alert("Bitte einen gültigen Lobbycode eingeben.");
+    }
+  }
+
+  function goToMainMenu() {
+    window.location.href = "/"; // Passe den Pfad ggf. an
+  }
+
+  function leaveLobby() {
+    window.location.herf = "/"; // Seite neu laden, um Popup erneut zu zeigen
+  }
+</script>
+
+</body>
+</html>
