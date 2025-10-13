@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'americankestrallaser'; /* Custom font für Überschrift */
+    src: url('../pages//americankestrallaser.ttf');
+}
+
+/* Standartisiert den Inhalt auf der Seite */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Anordnen von Elementen */
+body {
+    background-image: url('../img/hintergrund.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.main-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.header {
+    font-family: 'americankestrallaser', sans-serif;
+    font-size: 100px;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.lobby-info,
+.players,
+.chat {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.8s ease;
+}
+
+.lobby-info h2,
+.lobby-info p {
+    margin: 0;
+    color: #f47c2b;
+}
+
+.player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s;
+}
+
+.player:hover {
+    background: #fff3e0;
+}
+
+.remove-btn {
+    background: #ff7043;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #e64a19;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 200px;
+    margin-bottom: 10px;
+}
+
+.chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+}
+
+.chat-input button {
+    padding: 10px;
+    background: #f47c2b;
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background: #e4681a;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.start-button,
+.leave-button {
+    flex: 1;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#popup .main-content {
+  margin-top: 0;
+}
+
+.start-button {
+    background: #4CAF50;
+    color: white;
+}
+
+.start-button:hover {
+    background: #45a049;
+}
+
+.leave-button {
+    background: #ff7043;
+    color: white;
+}
+
+.leave-button:hover {
+    background: #e64a19;
+}
+
+input {
+    flex: 1;
+    width:48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+}
+
+button {
+    padding: 10px;
+    width: 47%;
+    background: #f47c2b;
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    padding: 1%;
+}
+
+/* Beide keyframes: Animation für die Überschrift
+ * Nur beim laden / neuladen der Seite
+ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
